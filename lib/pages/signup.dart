@@ -1,3 +1,4 @@
+import 'package:barberapp/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatefulWidget {
@@ -99,7 +100,10 @@ class _SignupState extends State<Signup> {
                   SizedBox(height: 40.0), // Add some space before the Sign In button
                   GestureDetector(
                     onTap: () {
-                      // Add your sign-up logic here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,

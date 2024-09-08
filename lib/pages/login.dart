@@ -1,3 +1,4 @@
+import 'package:barberapp/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -95,7 +96,7 @@ class _LoginState extends State<Login> {
                   SizedBox(height: 40.0), // Add some space before the Sign In button
                   GestureDetector(
                     onTap: () {
-                      // Add your sign-in logic here
+
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
@@ -112,7 +113,7 @@ class _LoginState extends State<Login> {
                       ),
                       child: Center(
                         child: Text(
-                          "Sign in",
+                          "Sign In",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20.0,
@@ -135,17 +136,25 @@ class _LoginState extends State<Login> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end ,
-                    children: [
-                      Text(
-                        "Sign up",
-                        style: TextStyle(
-                            color: Color(0xFF891635),
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Signup()),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end ,
+                      children: [
+                        Text(
+                          "Sign up",
+                          style: TextStyle(
+                              color: Color(0xFF891635),
+                              fontSize: 22.0,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
