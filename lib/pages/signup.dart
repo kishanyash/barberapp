@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: Container(
         child: Stack(
           children: [
@@ -28,7 +28,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               child: Text(
-                "Hello\nSign in!",
+                "Create your\nAccount",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 30.0,
@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Gmail",
+                    "Name",
                     style: TextStyle(
                         color: Color(0xFF891635),
                         fontSize: 25.0,
@@ -60,11 +60,26 @@ class _LoginState extends State<Login> {
                   ),
                   TextField(
                     decoration: InputDecoration(
-                      hintText: "Gmail",
-                      prefixIcon: Icon(Icons.mail_outline),
+                      hintText: "Name",
+                      prefixIcon: Icon(Icons.person_outline),
                     ),
                   ),
-                  SizedBox(height: 50.0),
+                  SizedBox(height: 20.0),
+
+                Text(
+                  "Gmail",
+                  style: TextStyle(
+                      color: Color(0xFF891635),
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.w500),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: "Gmail",
+                    prefixIcon: Icon(Icons.mail_outline),
+                  ),
+                ),
+                  SizedBox(height: 20.0),
                   Text(
                     "Password",
                     style: TextStyle(
@@ -80,22 +95,11 @@ class _LoginState extends State<Login> {
                     obscureText: true,
                   ),
                   SizedBox(height: 30.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Forgot Password?",
-                        style: TextStyle(
-                            color: Color(0xFF311937),
-                            fontSize: 15.0, // Reduced font size for subtlety
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ],
-                  ),
+
                   SizedBox(height: 40.0), // Add some space before the Sign In button
                   GestureDetector(
                     onTap: () {
-                      // Add your sign-in logic here
+                      // Add your sign-up logic here
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
@@ -112,7 +116,7 @@ class _LoginState extends State<Login> {
                       ),
                       child: Center(
                         child: Text(
-                          "Sign in",
+                          "Sign Up",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20.0,
@@ -127,7 +131,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.end ,
                     children: [
                       Text(
-                        "Don't have a account?",
+                        "Already have a account?",
                         style: TextStyle(
                             color: Color(0xFF311937),
                             fontSize: 17.0,
@@ -139,7 +143,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.end ,
                     children: [
                       Text(
-                        "Sign up",
+                        "Sign in",
                         style: TextStyle(
                             color: Color(0xFF891635),
                             fontSize: 22.0,

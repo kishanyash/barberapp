@@ -1,6 +1,7 @@
 import 'package:barberapp/pages/booking.dart';
 import 'package:barberapp/pages/home.dart';
 import 'package:barberapp/pages/onboarding.dart';
+import 'package:barberapp/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Onboarding()
+      home: Signup()
 
     );
   }
