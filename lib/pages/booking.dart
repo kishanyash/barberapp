@@ -1,3 +1,4 @@
+import 'package:barberapp/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class Booking extends StatefulWidget {
@@ -77,7 +78,7 @@ class _BookingState extends State<Booking> {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 40.0), // Add some space before the service text
+            SizedBox(height: 20.0), // Add some space before the service text
             Text(
               widget.service,
               style: TextStyle(
@@ -88,7 +89,7 @@ class _BookingState extends State<Booking> {
             ),
             SizedBox(height: 20.0),
             Container(
-              padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+              padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
               decoration: BoxDecoration(
                 color: Color(0xFFb4817e),
                 borderRadius: BorderRadius.circular(28.0),
@@ -134,7 +135,7 @@ class _BookingState extends State<Booking> {
             ),
             SizedBox(height: 20.0),
             Container(
-              padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+              padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
               decoration: BoxDecoration(
                 color: Color(0xFFb4817e),
                 borderRadius: BorderRadius.circular(28.0),
@@ -176,6 +177,34 @@ class _BookingState extends State<Booking> {
                     ],
                   ),
                 ],
+              ),
+            ),
+            SizedBox(height: 30.0,),
+            GestureDetector(
+              onTap: () {
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                decoration: BoxDecoration(
+                  color: Color(0xFFfe8f33),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Text(
+                    "BOOK NOW",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
