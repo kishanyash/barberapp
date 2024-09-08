@@ -1,4 +1,4 @@
-import 'package:barberapp/pages/home.dart';
+import 'package:barberapp/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class Booking extends StatefulWidget {
@@ -185,7 +185,7 @@ class _BookingState extends State<Booking> {
 
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Home()),
+                  MaterialPageRoute(builder: (context) => Login()),
                 );
               },
               child: Container(
