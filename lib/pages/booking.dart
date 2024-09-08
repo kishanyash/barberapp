@@ -26,6 +26,18 @@ class _BookingState extends State<Booking> {
     }
   }
 
+  TimeOfDay _selectedTime = TimeOfDay.now();
+
+  Future<void> _selectTime(BuildContext context) async {
+    final TimeOfDay? picked =
+    await showTimePicker(context: context, initialTime: _selectedTime);
+    if (picked != null && picked != _selectedTime) {
+      setState(() {
+        _selectedTime = picked;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +97,7 @@ class _BookingState extends State<Booking> {
               child: Column(
                 children: [
                   Text(
-                    "Set a date",
+                    "Set a Date",
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20.0,
@@ -109,6 +121,52 @@ class _BookingState extends State<Booking> {
                       SizedBox(width: 20.0),
                       Text(
                         "${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Container(
+              padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+              decoration: BoxDecoration(
+                color: Color(0xFFb4817e),
+                borderRadius: BorderRadius.circular(28.0),
+              ),
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                children: [
+                  Text(
+                    "Set a Time",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          _selectTime(context);
+                        },
+                        child: Icon(
+                          Icons.alarm,
+                          color: Colors.white,
+                          size: 30.0,
+                        ),
+                      ),
+                      SizedBox(width: 20.0),
+                      Text(
+                        "${_selectedTime.format(context)}",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30.0,
